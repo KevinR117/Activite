@@ -1,3 +1,4 @@
+#include <iostream>
 #include "Personnage.h"
 #include "Arme.h"
 
@@ -56,8 +57,14 @@ bool Personnage::estVivant() const
         return m_vie > 0;
     }
 
-void Personnage::afficherEtat() const
+void Personnage::afficherEtat(ostream& flux) const
 {
-    cout << "Le personnage a " << m_vie << " points de vie et " << m_mana << " points de magie" << endl;
-    m_arme->afficher();
+    flux << "Le personnage a " << m_vie << " points de vie et " << m_mana << " points de magie" << endl;
+    m_arme->afficher(flux);
+}
+
+ostream& operator<<(ostream& flux, Personnage perso)
+{
+    perso.afficherEtat(flux);
+    return flux
 }

@@ -8,11 +8,8 @@ using namespace std;
 int main()
 {
     Personnage perso1;
-    Personnage perso2(perso1);
-
-    perso1.afficherEtat();
-
-    perso1.adresseArme();
+    
+    cout << perso1 << endl;
 
     return 0;
 }
