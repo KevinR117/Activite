@@ -18,7 +18,7 @@ class Personnage
     void changerArme(std::string& nouvelleArme, int degatsNouvelleArme);
     void boirePotionDeVie(int quantitePotion);
     bool estVivant() const;
-    void afficherEtat() const;
+    void afficherEtat(std::ostream& flux) const;
 
     private:
 
@@ -26,5 +26,7 @@ class Personnage
     int m_mana;
     Arme *m_arme;
 };
+
+std::ostream& operator<<(std::ostream& flux, Personnage perso);
 
 #endif // PERSONNAGE_H_INCLUDED
