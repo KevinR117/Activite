@@ -1,9 +1,10 @@
+#include <iostream>
 #include "Arme.h"
 #include <string>
 
 using namespace std;
 
-Arme::Arme() : m_nom("Epée rouillée"), m_degats(10)
+Arme::Arme() : m_nom("EpÃ©e rouillÃ©e"), m_degats(10)
 {
 
 }
@@ -19,9 +20,9 @@ void Arme::changer(string& nom, int degats)
     m_degats = degats;
 }
 
-void Arme::afficher() const
+void Arme::afficher(ostream& flux) const
 {
-    cout << "Arme : " << m_nom << ", dégats : " << m_degats << endl;
+    flux << "Arme : " << m_nom << ", dÃ©gats : " << m_degats << endl;
 }
 
 int Arme::getDegats() const
