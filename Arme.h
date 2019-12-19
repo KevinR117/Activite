@@ -12,7 +12,7 @@ class Arme
     Arme(std::string nom, int degats);
     ~Arme() = default;
     void changer(std::string& nom, int degats);
-    void afficher() const;
+    void afficher(std::ostream& flux) const;
     int getDegats() const;
 
 private:
